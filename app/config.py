@@ -7,7 +7,7 @@ load_dotenv()
 APP_NAME = os.getenv("APP_NAME", "A2A registry")
 APP_VERSION = os.getenv("APP_VERSION", "0.1.0")
 APP_HOST = os.getenv("APP_HOST", "127.0.0.1")
-APP_PORT = os.getenv("APP_PORT", 8000)
+APP_PORT = os.getenv("APP_PORT", 9300)
 
 # Logging
 DEBUG = bool(os.getenv("DEBUG", "False").lower() == "true")

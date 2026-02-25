@@ -57,7 +57,7 @@ cp env.dist .env
 To run **A2A registry** you can use **uvicorn**:
 
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 9300
 ```
 
 or through the shortcut (with default port):
@@ -77,7 +77,7 @@ make dev
 Returns the registry status and the number of registered agents.
 
 ```bash
-curl http://localhost:8000/
+curl http://localhost:9300/
 ```
 
 **Response**: `200 OK`
@@ -97,7 +97,7 @@ curl http://localhost:8000/
 Registers an agent by fetching its Agent Card from `{url}/.well-known/agent-card.json`.
 
 ```bash
-curl -X POST http://localhost:8000/register \
+curl -X POST http://localhost:9300/register \
   -H "Content-Type: application/json" \
   -d '{"url": "https://my-agent.example.com"}'
 ```
@@ -132,7 +132,7 @@ curl -X POST http://localhost:8000/register \
 Searches registered agents by matching the query against skill `tags`, `name`, and `description` (case-insensitive).
 
 ```bash
-curl "http://localhost:8000/discover?skill=translation"
+curl "http://localhost:9300/discover?skill=translation"
 ```
 
 **Query parameters**:
@@ -161,7 +161,7 @@ Returns `[]` if no agents match.
 Returns all currently registered agents with their full Agent Card.
 
 ```bash
-curl http://localhost:8000/agents
+curl http://localhost:9300/agents
 ```
 
 **Response**: `200 OK`
@@ -184,7 +184,7 @@ Returns `[]` if no agents are registered.
 Manually removes an agent from the registry by its URL.
 
 ```bash
-curl -X DELETE "http://localhost:8000/unregister?url=https://my-agent.example.com"
+curl -X DELETE "http://localhost:9300/unregister?url=https://my-agent.example.com"
 ```
 
 **Query parameters**:
@@ -261,7 +261,7 @@ To debug your Python microservice you need to:
             "args": [
                 "app.main:app",
                 "--host", "0.0.0.0",
-                "--port", "8000",
+                "--port", "9300",
                 "--reload"
             ],
             "envFile": "${workspaceFolder}/.env",

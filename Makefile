@@ -19,7 +19,7 @@ setup: ## Create virtual env and install deps
 	@echo ""
 
 dev: ## Start A2A registry
-	uvicorn app.main:app --host 0.0.0.0 --port 8000
+	uvicorn app.main:app --host 0.0.0.0 --port 9300
 
 test: ## Run tests
 	uv run pytest tests/ -v
