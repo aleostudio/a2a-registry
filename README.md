@@ -36,7 +36,7 @@ source .venv/bin/activate
 uv sync
 ```
 
-If you prefer, there is a `Makefile` that do the job for you:
+If you prefer, there is a `Makefile` that do the job for you (follow the instructions):
 
 ```bash
 make setup
