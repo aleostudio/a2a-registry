@@ -24,7 +24,7 @@ dev: ## Start A2A registry
 
 test: ## Run tests
 	uv sync
-	uv add pytest
+	uv add --dev pytest
 	uv run pytest tests/ -v
 
 clean: ## Clean caches
